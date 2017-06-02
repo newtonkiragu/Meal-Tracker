@@ -4,22 +4,23 @@ import { Component } from '@angular/core';
   selector: 'my-app',
   template: `
   <div class="container">
-    <h1>My First Angular 2 App</h1>
-    <div *ngFor="let currentTask of tasks">
-      <h3 >{{ currentTask.description }}</h3>
-      <button (click)="showDetails(currentTask)" >Edit</button>
-    </div>
+    <h1>My Meal Tracker</h1>
+    <p>A website that keeps track of your daily Dietary cnsumption</p>
+    <h1>Edit Task</h1>
     <div *ngIf="selectedTask">
-      <h1>Edit Task</h1>
-      <div>
-        <label>Enter Task Description:</label>
-        <input [(ngModel)]="selectedTask.description">
-      </div>
-      <div>
-        <label>Enter Task ID:</label>
-        <input [(ngModel)]="selectedTask.id">
-        <button (click)="finishedEditing()">Done</button>
-      </div>
+    <div>
+    <label>Enter Task Description:</label>
+    <input [(ngModel)]="selectedTask.description">
+    </div>
+    <div>
+    <label>Enter Task ID:</label>
+    <input [(ngModel)]="selectedTask.id">
+    <button (click)="finishedEditing()">Done</button>
+    </div>
+    </div>
+    <div *ngFor="let currentTask of tasks">
+      <h3>{{ currentTask.description }}</h3>
+      <button (click)="showDetails(currentTask)">Edit</button>
     </div>
   </div>
   `
@@ -33,10 +34,10 @@ export class AppComponent {
       new Task("Do the laundry.", 3)
   ];
   selectedTask: Task = null;
-  showDetails(clickedTask: Task){
+  showDetails(clickedTask: Task) {
     this.selectedTask = clickedTask;
   }
-  finishedEditing(){
+  finishedEditing() {
     this.selectedTask = null;
   }
 }
