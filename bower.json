@@ -1,0 +1,23 @@
+{
+  "name": "angular2-skeleton",
+  "description": "",
+  "main": "",
+  "authors": [
+    "kiburei <akiburei@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vendor": "^1.3.4",
+    "zone": "^0.8.11",
+    "jquery": "^3.2.1",
+    "bootstrap": "^3.3.7"
+  }
+}
